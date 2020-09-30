@@ -51,5 +51,5 @@ python manage.py test
 python manage.py runserve
 ```
 
-Acessar o admin em http://127.0.0.1:8000/admin
-
+> Acesse o painel do Django Rest Framework para testar a aplicação em http://127.0.0.1:8000
+> Acesse o admin em http://127.0.0.1:8000/admin
