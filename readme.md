@@ -26,6 +26,11 @@ pip install -r requirements.txt
 	DB_PASSWORD=
 	DB_PORT=8000
 	```
+## Gerar secret key
+```console
+python -c 'from django.core.management.utils import get_random_secret_key; print(get_random_secret_key())'
+``` 
+- Salve a saída na variáveil `SECRET_KEY` no arquivo .env
 # Criação do BD
 **Execução dos migrates**
 	```
@@ -43,7 +48,7 @@ python manage.py test
 ```
 # Executar a aplicação
 ```
-python manage.py runserver
+python manage.py runserve
 ```
 
 Acessar o admin em http://127.0.0.1:8000/admin
