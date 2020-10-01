@@ -1,7 +1,7 @@
 from django.test import TestCase
 from django.utils import timezone
 from django.contrib.auth.models import User
-from blog.models import Category, Post, Tag, PostTag
+from blog.models import Category, Post, Tag
 
 class PostTestCase(TestCase):
     def setUp(self):
@@ -25,10 +25,6 @@ class PostTestCase(TestCase):
 
         tag = Tag.objects.create(name='TestCaseTag')
 
-        postTag = PostTag.objects.create(
-            post=post,
-            tag=tag
-        )
     
     def test_get_category(self):
         category = Category.objects.get(name='TestCaseCategory')

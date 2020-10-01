@@ -17,22 +17,6 @@ class Category(models.Model):
     def __str__(self):
         return self.name
 
-class Post(models.Model):
-    title = models.CharField(max_length=100)
-    description = models.TextField()
-    category = models.ForeignKey(Category, on_delete=models.SET_NULL, null=True)
-    author = models.ForeignKey(User, on_delete=models.SET_NULL, null=True)
-    created_at = models.DateTimeField(auto_now_add=True, auto_now=False)
-    updated_at = models.DateTimeField(auto_now=True)
-
-    class Meta:
-        ordering = ['title']
-        verbose_name = "Post"
-        verbose_name_plural = "Posts"
-
-    def __str__(self):
-        return self.title
-
 class Tag(models.Model):
     name = models.CharField(max_length=100)
     created_at = models.DateTimeField(auto_now_add=True, auto_now=False)
@@ -46,14 +30,31 @@ class Tag(models.Model):
     def __str__(self):
         return self.name
         
-class PostTag(models.Model):
-    post = models.ForeignKey(Post, on_delete=models.CASCADE)
-    tag = models.ForeignKey(Tag, on_delete=models.CASCADE)
-
+class Post(models.Model):
+    title = models.CharField(max_length=100)
+    description = models.TextField()
+    category = models.ForeignKey(Category, on_delete=models.SET_NULL, null=True)
+    author = models.ForeignKey(User, on_delete=models.SET_NULL, null=True)
     created_at = models.DateTimeField(auto_now_add=True, auto_now=False)
     updated_at = models.DateTimeField(auto_now=True)
+    tags = models.ManyToManyField(Tag)
 
     class Meta:
-        ordering = ['post']
-        verbose_name = "PostTag"
-        verbose_name_plural = "PostTags"
+        ordering = ['title']
+        verbose_name = "Post"
+        verbose_name_plural = "Posts"
+
+    def __str__(self):
+        return self.title
+
+# class PostTag(models.Model):
+#     post = models.ForeignKey(Post, on_delete=models.CASCADE)
+#     tag = models.ForeignKey(Tag, on_delete=models.CASCADE)
+
+#     created_at = models.DateTimeField(auto_now_add=True, auto_now=False)
+#     updated_at = models.DateTimeField(auto_now=True)
+
+#     class Meta:
+#         ordering = ['post']
+#         verbose_name = "PostTag"
+#         verbose_name_plural = "PostTags"

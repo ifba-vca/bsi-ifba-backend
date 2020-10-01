@@ -12,9 +12,12 @@ class TagSerializer(serializers.ModelSerializer):
         fields = ['name']
 
 class PostSerializer(serializers.ModelSerializer):
+    category = CategorySerializer(many=False, read_only=True)
+    tags = TagSerializer(many=True, read_only=True)
+
     class Meta:
         model = Post
-        fields = ['title', 'description', 'category', 'author', 'created_at', 'updated_at']
+        fields = ['title', 'description', 'category', 'tags', 'author', 'created_at', 'updated_at']
 
 
 
