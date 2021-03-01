@@ -5,17 +5,19 @@
 # Pré Requesitos
 
 -   Python v3.8
--   [Virtualenv](https://virtualenv.pypa.io/en/latest/)
+-   [Pipenv](https://pypi.org/project/pipenv/)
 
 # Instalação
 
+**Instalando dependencias**
 ```
-virtualenv venv
-source venv/bin/activate
-pip install -r requirements.txt
+pipenv install
 ```
 
-> **Obs:** Para fazer a ativação do virtualenv no Windows substitua ~~source venv/bin/activate~~ por **virtualenv\venv\Scripts\activate**
+**Terminal do ambiente virtual**
+```
+pipenv shell
+```
 
 # Variáveis de ambiente
 
@@ -29,7 +31,7 @@ DB_ENGINE=django.db.backends.postgresql
 DB_NAME=
 DB_USER=
 DB_PASSWORD=
-DB_PORT=8000
+DB_PORT=5432
 ```
 
 ## Gerar secret key
