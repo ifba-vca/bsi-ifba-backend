@@ -2,6 +2,8 @@
 
 > Sistema dedicado ao curso de Sistemas de Informação do IFBA Campus Vitória da conquista.
 
+### :globe_with_meridians: [Wiki](https://github.com/flaviofilipe/bsi-ifba-backend/wiki)
+
 # Pré Requesitos
 
 -   Python v3.8
