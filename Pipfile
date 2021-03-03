@@ -10,6 +10,7 @@ djangorestframework = "*"
 drf-yasg = "*"
 django-cors-headers = "*"
 psycopg2 = "*"
+pillow = "*"
 
 [dev-packages]
 
