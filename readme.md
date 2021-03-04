@@ -8,6 +8,7 @@
 
 -   Python v3.8
 -   [Pipenv](https://pypi.org/project/pipenv/)
+-   PostgreSQL v12
 
 # Instalação
 
@@ -15,11 +16,22 @@
 ```
 pipenv install
 ```
+No Ubuntu 20.04, foi necessário instalar o pacote `libpq-dev`
+```
+sudo apt install libpq-dev
+```
 
 **Terminal do ambiente virtual**
 ```
 pipenv shell
 ```
+**Configuração do SGBD**
+
+-   Crie um banco de dados no PostgreSQL. O nome do banco será utilizado logo em seguida.
+
+-   Pode-se utilizar como Enconding UTF8, e para Collate/Ctype, pt_BR.UTF-8.
+
+
 
 # Variáveis de ambiente
 
